@@ -10,17 +10,17 @@ const lookup = {
     'Y': 'L','Z': 'M', '?': '?', ',': ','
   };
   
-  function rot13(encodedStr){
-     let decodedArr = []; // Your Result goes here
-    // Only change code below this line
-      for (let i = 0; i < encodedStr.length; i++){
-          if (encodedStr[i] === '?' || encodedStr === ' ') {
-              decodedArr[i] = encodedStr[i];
-              continue;
-          }
-          decodedArr[i] = lookup[encodedStr[i]];
-      }
-    return decodedArr;//return decodedArr
+function rot13(encodedStr) {
+    let decoder = [];
+    for (let i = 0; i < encodedStr.length; i++) {
+        const c = encodedStr.charAt(i);
+        if (c == '?' || c == ' ') {
+            decoder[i] = c;
+            continue;
+        }
+        decoder[i] = lookup[c];
+    }
+    console.log(decoder.join(' '));
   }
   
   // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
